@@ -1,5 +1,7 @@
 # jobim
 
+[![Clojars Project](https://img.shields.io/clojars/v/jobim-presentation/lein-template.svg)](https://clojars.org/jobim-presentation/lein-template)
+
 A Leiningen template for [jobim](https://github.com/MysteryMachine/jobim).
 
 ## Usage
