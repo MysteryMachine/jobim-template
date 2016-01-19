@@ -7,4 +7,5 @@
   default-style
   (->Title
    "{{name}}"
-   [:a {:href "https://github.com/MysteryMachine/jobim"}] "jobim readme"))
+   [:a {:href "https://github.com/MysteryMachine/jobim"}
+    "jobim readme"]))

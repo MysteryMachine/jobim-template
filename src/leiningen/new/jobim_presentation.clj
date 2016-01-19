@@ -1,18 +1,18 @@
-(ns leiningen.new.jobim
+(ns leiningen.new.jobim-presentation
   (:require [leiningen.new.templates :refer [renderer name-to-path ->files]]
             [leiningen.core.main :as main]))
 
-(def render (renderer "jobim"))
+(def render (renderer "jobim-presentation"))
 
-(defn jobim
+(defn jobim-presentation
   "Creates a fresh jobim project"
   [name]
   (let [data {:name name
               :sanitized (name-to-path name)}]
     (main/info "Generating fresh 'lein new' jobim project.")
     (->files data
-             ["src/{{sanitized}}/show.clj" (render "show.clj" data)]
-             ["test/{{sanitized}}/show-test.clj" (render "show-test.clj" data)]
+             ["src/{{sanitized}}/show.cljs" (render "show.cljs" data)]
+             ["test/{{sanitized}}/show_test.cljs" (render "show_test.cljs" data)]
              ["project.clj" (render "project.clj" data)]
              ["resources/public/js/highlight.pack.js" (render "highlight.pack.js" data)]
              ["resources/public/css/railscasts.css" (render "railscasts.css" data)]

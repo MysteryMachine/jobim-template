@@ -1,4 +1,4 @@
-(defproject {{show}} "0.1.0-SNAPSHOT"
+(defproject {{name}} "0.1.0-SNAPSHOT"
   :description "FIXME"
   :url "FIXME"
   :license {:name "Eclipse Public License"
@@ -7,7 +7,6 @@
   :dependencies [[org.clojure/clojure "1.7.0"]
                  [org.clojure/clojurescript "1.7.170"]
                  [org.clojure/core.async "0.2.374"]
-                 [com.cemerick/piggieback "0.2.1"]
                  [reagent "0.5.0"]
                  [fipp "0.6.4"]
                  [org.clojars.mysterysal/jobim "1.0.0"]
@@ -21,24 +20,20 @@
   :clean-targets ^{:protect false} ["resources/public/js/compiled" "target"]
 
   :cljsbuild {:builds
-              [{:id "test"
+              [{:id "dev"
                 :source-paths ["src" "test"]
                 :figwheel true
                 :compiler {:output-to "resources/public/js/compiled/show.js"
                            :output-dir "resources/public/js/compiled/out"
                            :asset-path "js/compiled/out"
-                           :main intro.core-test
+                           :main {{name}}.show-test
                            :source-map true
                            :cache-analysis true}}
                {:id "min"
                 :source-paths ["src"]
-                :compiler {:output-to "resources/public/js/compiled/show-min.js"
-                           :main intro.core
+                :compiler {:output-to "resources/public/js/compiled/show.min.js"
+                           :main {{name}}.show
                            :optimizations :advanced
                            :pretty-print false}}]}
 
-  :figwheel {:css-dirs ["resources/public/css"]
-             :nrepl-port 7888
-             :nrepl-middleware ["cider.nrepl/cider-middleware"
-                                "refactor-nrepl.middleware/wrap-refactor"
-                                "cemerick.piggieback/wrap-cljs-repl"]})
+  :figwheel {:css-dirs ["resources/public/css"]})
