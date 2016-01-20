@@ -4,10 +4,10 @@
   :license {:name "Eclipse Public License"
             :url "http://www.eclipse.org/legal/epl-v10.html"}
 
-  :dependencies [[org.clojure/clojure "1.7.0"]
+  :dependencies [[org.clojure/clojure "1.8.0"]
                  [org.clojure/clojurescript "1.7.170"]
                  [org.clojure/core.async "0.2.374"]
-                 [reagent "0.5.0"]
+                 [reagent "0.6.0-alpha"]
                  [fipp "0.6.4"]
                  [org.clojars.mysterysal/jobim "1.0.0"]
                  [org.clojars.mysterysal/jobim-figwheel "0.1.0"]]
@@ -33,7 +33,7 @@
                 :source-paths ["src"]
                 :compiler {:output-to "resources/public/js/compiled/show.min.js"
                            :main {{name}}.show
-                           :optimizations :none
+                           :optimizations :whitespace
                            :pretty-print false}}]}
 
   :figwheel {:css-dirs ["resources/public/css"]})
