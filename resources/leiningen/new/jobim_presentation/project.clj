@@ -33,7 +33,7 @@
                 :source-paths ["src"]
                 :compiler {:output-to "resources/public/js/compiled/show.min.js"
                            :main {{name}}.show
-                           :optimizations :advanced
+                           :optimizations :none
                            :pretty-print false}}]}
 
   :figwheel {:css-dirs ["resources/public/css"]})
